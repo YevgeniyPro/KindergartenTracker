@@ -5,4 +5,11 @@ package com.myproject.kgtracker;
  */
 public class Person
 {
+    String name, surname;
+    short age;
+
+
+
+
+
 }

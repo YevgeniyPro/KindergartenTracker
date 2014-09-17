@@ -9,8 +9,7 @@ import java.awt.*;
  */
 public class BasicFrame extends JFrame
 {
-
-    public BasicFrame()
+    public  BasicFrame()
     {
 
         this.setSize(Constants.MAINWINDOW_WIDTH, Constants.MAINWINDOW_HEIGTH);
@@ -21,29 +20,34 @@ public class BasicFrame extends JFrame
         Dimension ulCorner = new Dimension((dim.width / 2) - (Constants.MAINWINDOW_WIDTH / 2), (dim.height / 2) - (Constants.MAINWINDOW_HEIGTH / 2));
 
         this.setLocation(ulCorner.width, ulCorner.height);
-        this.setResizable(false);
+        this.setResizable(true);
         this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         this.setTitle("KGTracker Prototype v1.01");
 
         JPanel containerPanel = new JPanel();
         containerPanel.setLayout(new BorderLayout());
         containerPanel.add(setFSmenupanel(), BorderLayout.NORTH);
-
+        containerPanel.add(FirstScreen.getContent());
         containerPanel.add(setFooterPanel(), BorderLayout.SOUTH);
+
+
         this.add(containerPanel);
 
 
+
     }
+
+
     private JPanel setFSmenupanel ()
     {
 
 
         JPanel panelFSmenue = new JPanel();
-        panelFSmenue.setLayout(new FlowLayout(FlowLayout.LEFT));
+        panelFSmenue.setLayout(new FlowLayout(FlowLayout.CENTER));
 
-        JLabel labelPanelMenu_FS = new JLabel("Please select a section in the menu or on screen");
+       /* JLabel labelPanelMenu_FS = new JLabel("Please select a section in the menu or on screen");
         panelFSmenue.add(labelPanelMenu_FS);
-        labelPanelMenu_FS.setToolTipText("Text");
+        labelPanelMenu_FS.setToolTipText("Text");*/
 
         JButton menuMainButton = new JButton("Main");
 

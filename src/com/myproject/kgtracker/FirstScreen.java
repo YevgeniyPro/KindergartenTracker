@@ -10,20 +10,45 @@ import javax.swing.*;
 
 public class FirstScreen extends BasicFrame
 
-{
+{   static JPanel panelFSbody = new JPanel();
     public static void main(String[] arsg){
 
         BasicFrame FirstScreen =  new BasicFrame();
 
-        JPanel panelFSbody = new JPanel();
-        JLabel labelBodyPanel = new JLabel("The main panel where everything will take place");
-        panelFSbody.add(labelBodyPanel);
+        //JLabel labelBodyPanel = new JLabel("The main panel where everything will take place");
+        //panelFSbody.setLayout(new BorderLayout());
 
-        FirstScreen.add(panelFSbody, BorderLayout.CENTER);
+        JPanel panelFSbodyGroups = new JPanel();
+        panelFSbodyGroups.setSize(300, 300);
+        panelFSbodyGroups.setBorder(BorderFactory.createLineBorder(Color.black));
+        //panelFSbodyGroups.add(new JLabel("Groups"));
+
+        JLabel labelFSGrous = new JLabel("People");
+        labelFSGrous.setToolTipText("Choose a groups and press \" Show \" ");
+        //panelFSbodyGroups.add(labelFSGrous);
+
+        JPanel panelFSbodyPeople = new JPanel();
+        panelFSbodyPeople.setSize(300, 300);
+        panelFSbodyPeople.setBorder(BorderFactory.createLineBorder(Color.black));
+        //JLabel labelFSPeople = new JLabel("People");
+
+
+
+
+       // panelFSbody.add(labelBodyPanel, BorderLayout.NORTH);
+        panelFSbody.add(panelFSbodyGroups);
+        panelFSbody.add(panelFSbodyPeople);
+        //panelFSbody.add(labelBodyPanel, BorderLayout.SOUTH);
+
 
 
     };
 
+    public static JPanel getContent (){
+
+
+        return panelFSbody;
+    }
 
 
 
