@@ -4,26 +4,47 @@ import com.javarush.test.level14.lesson08.home03.*;
 import com.javarush.test.level14.lesson08.home03.Person;
 
 import java.util.ArrayList;
+import java.util.List;
 
 /**
  * Created by Yevg on 10.09.2014.
  */
 public class Group
 {
-    String groupName;
+
+    static List<Group> groups = new ArrayList<>();
+    String name;
     ArrayList<Person> members;
 
 
-   public void addGroup(String groupName){
+   public void addGroup(String groupName){ //adding a group
 
-       //Checlk if such group exists
-       ArrayList<com.myproject.kgtracker.Person> groupName = new ArrayList<com.myproject.kgtracker.Person>();
+       //Check if such group name exists
+       if (groups.contains(groupName)) System.out.println("Such group name already exists");
+       else groups.add(new Group(groupName));
 
 
    }
 
-    void addMember(String groupName, com.myproject.kgtracker.Person){
+    void addMember( Person person){   //add member to the group(each group is also a list)
+            this.members.add(person);
+    }
+    void delMember( Person person){   //delete certain member from the group(each group is also a list)
+        this.members.remove(person);
+    }
 
+    Group (String name) {
+        this.name = name;
+    }
+
+    public void delGroup(Object groupName){
+
+        //Check if such group name exists
+        if (!groups.contains(groupName)) System.out.println("Such group name not found");
+        else groups.remove(groupName);
+    }
+    void showGroup(Group group){
+        for(Person p : group.members) System.out.println();
     }
 
 
