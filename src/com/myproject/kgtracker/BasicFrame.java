@@ -24,6 +24,7 @@ public class BasicFrame extends JFrame
         this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         this.setTitle("KGTracker Prototype v1.01");
 
+
         JPanel containerPanel = new JPanel();
         containerPanel.setLayout(new BorderLayout());
         containerPanel.add(setFSmenupanel(), BorderLayout.NORTH);

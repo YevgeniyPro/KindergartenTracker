@@ -3,6 +3,7 @@ package com.myproject.kgtracker;
 import com.javarush.test.level14.lesson08.home03.*;
 import com.javarush.test.level14.lesson08.home03.Person;
 
+import javax.swing.*;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -12,9 +13,10 @@ import java.util.List;
 public class Group
 {
 
-    static List<Group> groups = new ArrayList<>();
-    String name;
+    static ArrayList<Group> groups = new ArrayList<>();
+    private String name;
     ArrayList<Person> members;
+    DefaultListModel defListModelgroups = new DefaultListModel();
 
 
    public void addGroup(String groupName){ //adding a group
@@ -26,6 +28,7 @@ public class Group
 
    }
 
+
     void addMember( Person person){   //add member to the group(each group is also a list)
             this.members.add(person);
     }
@@ -35,6 +38,9 @@ public class Group
 
     Group (String name) {
         this.name = name;
+    }
+    public String getName(){
+        return this.name;
     }
 
     public void delGroup(Object groupName){
@@ -48,5 +54,19 @@ public class Group
     }
 
 
+   public static JList showGroups() {
+
+
+        String[] groupsList = new String[groups.size()];
+        for (int i = 0; i < groups.size(); i++)
+            groupsList[i] = groups.get(i).getName();
+
+        JList groupListShow = new JList(groupsList);
+        groupListShow.setSelectionMode(ListSelectionModel.SINGLE_SELECTION);
+
+
+        return groupListShow;
+
+   }
 
 }
