@@ -13,35 +13,47 @@ import java.util.List;
 public class Group
 {
 
-    static ArrayList<Group> groups = new ArrayList<>();
+    public static ArrayList<Group> groups = new ArrayList<>();
     private String name;
-    ArrayList<Person> members;
+    private ArrayList<com.myproject.kgtracker.Person> members;
     DefaultListModel defListModelgroups = new DefaultListModel();
 
 
-   public void addGroup(String groupName){ //adding a group
 
-       //Check if such group name exists
-       if (groups.contains(groupName)) System.out.println("Such group name already exists");
-       else groups.add(new Group(groupName));
+    public void addGroup(String groupName){ //adding a group
 
-
-   }
+        //Check if such group name exists
+        if (groups.contains(groupName)) System.out.println("Such group name already exists");
+        else groups.add(new Group(groupName));
 
 
-    void addMember( Person person){   //add member to the group(each group is also a list)
-            this.members.add(person);
     }
-    void delMember( Person person){   //delete certain member from the group(each group is also a list)
-        this.members.remove(person);
+    public void addGroup(Group groupName){ //adding a group
+
+        //Check if such group name exists
+        if (groups.contains(groupName)) System.out.println("Such group name already exists");
+        else groups.add(groupName);
+
+
     }
 
-    Group (String name) {
+
+
+
+    public Group (String name) {
         this.name = name;
     }
     public String getName(){
         return this.name;
     }
+
+    public void addMember(com.myproject.kgtracker.Person person){   //add member to the group(each group is also a list)
+        this.members.add(person);
+    }
+    public void delMember(com.myproject.kgtracker.Person person){   //delete certain member from the group(each group is also a list)
+        this.members.remove(person);
+    }
+
 
     public void delGroup(Object groupName){
 
@@ -49,12 +61,13 @@ public class Group
         if (!groups.contains(groupName)) System.out.println("Such group name not found");
         else groups.remove(groupName);
     }
-    void showGroup(Group group){
-        for(Person p : group.members) System.out.println();
+    void printGroup(Group group){
+        for(com.myproject.kgtracker.Person p : group.members) System.out.println();
     }
 
 
-   public static JList showGroups() {
+
+    static JList showGroups() {
 
 
         String[] groupsList = new String[groups.size()];
@@ -62,11 +75,12 @@ public class Group
             groupsList[i] = groups.get(i).getName();
 
         JList groupListShow = new JList(groupsList);
+        groupListShow.setSize(50, 100);
         groupListShow.setSelectionMode(ListSelectionModel.SINGLE_SELECTION);
 
 
-        return groupListShow;
+        return groupListShow;}
 
    }
 
-}
+

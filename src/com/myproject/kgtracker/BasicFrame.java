@@ -41,8 +41,6 @@ public class BasicFrame extends JFrame
 
     private JPanel setFSmenupanel ()
     {
-
-
         JPanel panelFSmenue = new JPanel();
         panelFSmenue.setLayout(new FlowLayout(FlowLayout.CENTER));
 

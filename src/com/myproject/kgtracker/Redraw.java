@@ -6,5 +6,5 @@ package com.myproject.kgtracker;
 public class Redraw
 {
 
-    //here the reaction onthe listerners - through setVisibleb
+    //here the reaction on the listerners - through setVisible to First Screen Body Panels
 }
