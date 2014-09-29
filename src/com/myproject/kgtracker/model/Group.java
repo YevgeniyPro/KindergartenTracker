@@ -1,11 +1,8 @@
-package com.myproject.kgtracker;
-
-import com.javarush.test.level14.lesson08.home03.*;
-import com.javarush.test.level14.lesson08.home03.Person;
+package com.myproject.kgtracker.model;
 
 import javax.swing.*;
+import java.awt.*;
 import java.util.ArrayList;
-import java.util.List;
 
 /**
  * Created by Yevg on 10.09.2014.
@@ -15,7 +12,7 @@ public class Group
 
     public static ArrayList<Group> groups = new ArrayList<>();
     private String name;
-    private ArrayList<com.myproject.kgtracker.Person> members;
+    private ArrayList<com.myproject.kgtracker.model.Person> members;
     DefaultListModel defListModelgroups = new DefaultListModel();
 
 
@@ -37,9 +34,6 @@ public class Group
 
     }
 
-
-
-
     public Group (String name) {
         this.name = name;
     }
@@ -47,10 +41,10 @@ public class Group
         return this.name;
     }
 
-    public void addMember(com.myproject.kgtracker.Person person){   //add member to the group(each group is also a list)
+    public void addMember(com.myproject.kgtracker.model.Person person){   //add member to the group(each group is also a list)
         this.members.add(person);
     }
-    public void delMember(com.myproject.kgtracker.Person person){   //delete certain member from the group(each group is also a list)
+    public void delMember(com.myproject.kgtracker.model.Person person){   //delete certain member from the group(each group is also a list)
         this.members.remove(person);
     }
 
@@ -62,12 +56,12 @@ public class Group
         else groups.remove(groupName);
     }
     void printGroup(Group group){
-        for(com.myproject.kgtracker.Person p : group.members) System.out.println();
+        for(com.myproject.kgtracker.model.Person p : group.members) System.out.println();
     }
 
 
 
-    static JList showGroups() {
+    public static JList showGroups() {
 
 
         String[] groupsList = new String[groups.size()];
@@ -75,7 +69,7 @@ public class Group
             groupsList[i] = groups.get(i).getName();
 
         JList groupListShow = new JList(groupsList);
-        groupListShow.setSize(50, 100);
+        groupListShow.setPreferredSize(new Dimension(70, 100));
         groupListShow.setSelectionMode(ListSelectionModel.SINGLE_SELECTION);
 
 

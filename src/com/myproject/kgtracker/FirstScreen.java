@@ -4,6 +4,8 @@ package com.myproject.kgtracker;
  * Created by Yevg on 10.09.2014.
  */
 
+import com.myproject.kgtracker.model.Group;
+
 import java.awt.*;
 import javax.swing.*;
 
@@ -17,7 +19,7 @@ public class FirstScreen extends BasicFrame {
     public static void main(String[] arsg){
 
         BasicFrame FirstScreen =  new BasicFrame();
-        JButton button1 = new JButton();
+        JButton button1 = new JButton("View");
         JButton button2 = new JButton();
         JButton button3 = new JButton();
         //JLabel labelBodyPanel = new JLabel("The main panel where everything will take place");
@@ -37,7 +39,7 @@ public class FirstScreen extends BasicFrame {
 
 
         // Filling otu the list to for testing purposes
-        Group group1 = new Group("Sonechko");
+        Group group1 = new Group("Sonechkoooooooooooooo");
        Group group2 = new Group("Sadochok");
         Group group3 = new Group("Malyatko");
         Group group4 = new Group("KOKOKO");
@@ -51,14 +53,10 @@ public class FirstScreen extends BasicFrame {
         panelFSbodyGroups.add(Group.showGroups());
 
 
-
-
-
-        panelFSbodyGroups.add(labelFSGroups);
-        button1.setSize(10, 30);
+        //button1.setSize(10, 30);
         panelFSbodyGroups.add(button1);
-        panelFSbodyGroups.add(button2);
-        panelFSbodyGroups.add(button3);
+        //panelFSbodyGroups.add(button2);
+        //panelFSbodyGroups.add(button3);
 
         JScrollPane listPane = new JScrollPane();
         JList gList = Group.showGroups();
@@ -68,6 +66,7 @@ public class FirstScreen extends BasicFrame {
 
 
 
+        JButton viewPerson = new JButton("View");
 
         JPanel panelFSbodyPeople = new JPanel();
         panelFSbodyPeople.setPreferredSize(new Dimension(400, 400));
@@ -76,6 +75,7 @@ public class FirstScreen extends BasicFrame {
         JLabel labelFSPeople = new JLabel("People");
         panelFSbodyPeople.add(labelFSPeople);
         panelFSbodyPeople.add(listPane);
+        panelFSbodyPeople.add(viewPerson);
 
 
 
@@ -89,7 +89,7 @@ public class FirstScreen extends BasicFrame {
         //panelFSbody.add(labelBodyPanel, BorderLayout.SOUTH);
 
 
-
+        FirstScreen.pack();
 
 
     };

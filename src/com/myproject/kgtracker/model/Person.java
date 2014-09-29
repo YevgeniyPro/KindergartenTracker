@@ -1,4 +1,4 @@
-package com.myproject.kgtracker;
+package com.myproject.kgtracker.model;
 
 import java.util.ArrayList;
 import java.util.Date;

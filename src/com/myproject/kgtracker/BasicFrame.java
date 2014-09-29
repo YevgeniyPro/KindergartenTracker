@@ -1,7 +1,8 @@
 package com.myproject.kgtracker;
 
+import com.myproject.kgtracker.model.Constants;
+
 import javax.swing.*;
-import javax.swing.border.Border;
 import java.awt.*;
 
 /**
@@ -33,6 +34,7 @@ public class BasicFrame extends JFrame
 
 
         this.add(containerPanel);
+        //this.pack();
 
 
 
